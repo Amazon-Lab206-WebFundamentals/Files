@@ -13,6 +13,6 @@ var users = {
 for (var group in users) {
     console.log(group);
     for(var i = 0; i < users[group].length; i++){
-        console.log((i + 1) + " - " + users[group][i].first_name, users[group][i].last_name + " - " + users[group][i].first_name.length +users[group][i].last_name.length);
+        console.log((i + 1) + " - " + users[group][i].first_name, users[group][i].last_name + " - ",  users[group][i].first_name.length + users[group][i].last_name.length);
     }
 }
