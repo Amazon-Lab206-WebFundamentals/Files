@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src = jquery-3.2.1.min.js ></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('img').css('display','block');
+            $('.reappear').click(function(){
+                $('img').fadeIn(100);
+            })
+            $('img').click(function () {
+                console.log('data-alt-src value is', $(this).attr('data-alt-src'));
+            })
+            // $('img').click(function(){
+            //     $(this).attr('src', '.data-alt-src');
+            // })
+            $('img').click(function(){
+                var temp = '';
+             $(this).attr('temp', $(this).attr('src'));
+            $(this).attr('src', $(this).attr('alt-src'));
+            $(this).attr('alt-src', $(this).attr('temp'));
+            })
+        });
+    </script>
+</head>
+<body>
+    <img class = "ninja" src = "cat0.png" alt-src = "ninja0.png">
+    <img class = "ninja" src = "cat1.png" alt-src = "ninja1.png">
+    <img class = "ninja" src = "cat2.png" alt-src = "ninja2.png">
+    <img class = "ninja" src = "cat3.png" alt-src = "ninja3.png">
+    <img class = "ninja" src = "cat4.png" alt-src = "ninja4.png">
+    <!-- <img class = "ninja" src = "cat1.png" alt = "oldie">
+    <img class = "ninja" src = "cat2.png" alt = "oldie">
+    <img class = "ninja" src = "cat3.png" alt = "oldie">
+    <img class = "ninja" src = "cat4.png" alt = "oldie">
+    <img class = "ninja" src = "ninja0.png" alt = "oldie">
+    <img class = "ninja" src = "ninja1.png" alt = "oldie">
+    <img class = "ninja" src = "ninja2.png" alt = "oldie">
+    <img class = "ninja" src = "ninja3.png" alt = "oldie">
+    <img class = "ninja" src = "ninja4.png" alt = "oldie"> -->
+    <button class = "reappear">Poof</button>
+</body>
+</html>
