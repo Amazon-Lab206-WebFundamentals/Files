@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src = jquery-3.2.1.min.js ></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('h1').click(function(){
+                alert('hello');
+            })
+            $('#hide').click(function(){
+                $('p').hide();
+            })
+            $('#show').click(function(){
+                $('p').show();
+            })
+            $('h2').hover(function(){
+                $('h1').text('welp this is awkward..');               
+            }, function(){ 
+                $('h1').text('Click me!');
+                $('.hello').after("wow secerts ")
+            });
+            $('.append').click(function(){
+                $('.result').append('<h4>.append adds HTML!</h4>');
+            })
+            $('#up').click(function(){
+                $('img').slideUp(100);
+            })
+            $('#down').click(function(){
+                $('img').slideDown(100);
+            })
+            $('#toggle').click(function(){
+                $('img').slideToggle(100);
+            })
+            $('#faded').click(function(){
+                $('img').fadeIn(100);
+            })
+            $('img').click(function(){
+                $(this).fadeOut(100);
+            })
+            $('p').click(function(){
+                $('p').addClass('hello');
+            })
+            $('h2').click(function(){
+                $('h4').html('<h4><i>.append adds HTML!</i></h4>');
+                $('h1').attr("id","well")
+                console.log($('h1').val('#well'))
+            })
+            $('.button1').click(function(){
+                $('input:text').val(2134);
+            })
+        });
+    </script>
+</head>
+<body>
+    <h1>Click me!</h1>
+    <div class='result'></div>
+    <p>Hello world</p>
+    <p>the earth says hello</p>
+    <p>why</p>
+    <button id='hide'>Hide hide hide</button>
+    <button id='show'>Show show show</button>
+    <div class='result'></div>    
+    <button class= 'append'>Append append append!</button>
+    <h2>SECOND HEAder</h2>
+    <img id= 'one' src= "https://i.imgur.com/8kqCemT.png" alt = "image">
+    <img id= 'two' src= "https://i.imgur.com/o2bdMvO.png" alt = "image">
+    <img id= 'three' src= "https://i.imgur.com/cIgStjO.png" alt = "image">
+    <button id= 'down'>down</button>
+    <button id= 'up'>up</button>
+    <button id= 'toggle'>toggle</button>
+    <button id= 'faded'>faded</button>
+    <input class = 'search' type = 'text'></input>
+    <button class = 'button1'>Search</button>
+
+</body>
+</html>
