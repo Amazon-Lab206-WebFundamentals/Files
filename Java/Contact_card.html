@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>The Codingdojo ColorClicker!</title>
+    <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+    <script type="text/javascript">
+        $(document).on("click", "#contain",function(){
+            $(this).children().toggle()
+        })
+        $(document).ready(function(){
+            $('form').submit(function(){               
+                $('#box').append('<div id="contain"><div class="info">'+'<h1>'+$('input[name = "first_name"]').val()+ $('input[name = "last_name"]').val()+'</h1>'+'<p>Click me for a description</p>'
+                +'</div>'+'<div class="desc">'+'<p>'+$('input[name = "description"]').val()+'</div></div>');
+                $('.desc').hide(0);
+                return false;
+            })
+        });
+    </script>
+</head>
+<body>
+    <form>
+        First Name:
+        <input type = 'text' name = 'first_name' value="First Name" placeholder="First Name"><br><br>
+        Last Name:
+        <input type = 'text' name = 'last_name' value="First Name" placeholder="Last Name"><br><br>
+        Description:
+        <input type = 'text area' name = 'description' value="First Name" placeholder="Description"><br><br>
+        <button type = 'submit' value = 'oofda'>Add User</button>
+    </form>
+    <div id = "box">
+    </div>
+    </body>
+</html>
