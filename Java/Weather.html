@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Temp
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // http:api.openweathermap.org/data/2.5/forecast/daily?id=524901&APPID={INSERTAPIKEY}95a34e79cf29699dc5a375902dd2c34a
+            // Make sure to put your unique API key in the URL (taking out the brackets).95a34e79cf29699dc5a375902dd2c34a
+            // &APPID={INSERTAPIKEY} will need to be at the end of each URL you access below and in the assignment.95a34e79cf29699dc5a375902dd2c34a
+            $('form').submit(function(event){
+                event.preventDefault();
+                $.get('https://api.openweathermap.org/data/2.5/weather?q='+$('input[name = "city"]').val() +"&units=imperial&&appid=95a34e79cf29699dc5a375902dd2c34a",function(weather){
+                    var location = '<h1>'+$('input[name="city"]').val()+'</h1>';
+                    var htmlStr = '<h2> Temperature: ' + Math.round([weather.main.temp]) + '°F';
+                    console.log(weather);
+                    console.log(weather.main.temp);
+                    $('.locale').remove();
+                    $('body').append('<div class="locale">'+location+htmlStr+'</div>');
+                }, 'json');
+                
+                })         
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <input  value = "Gilbert" name = "city" placeholder="City">
+        <!-- <input  name = "state" placeholder="State"> -->
+        <button type = 'submit' value = 'oofda'>oofda</button>
+    </form>
+    <div id = "box">
+    </div>
+    </body>
+</html>
